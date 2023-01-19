@@ -150,4 +150,14 @@ while (
 console.log(
       "UC7A - Emp Wage with reduce: " + empDailyWageArr.reduce(totalWages)
     );
+
+
+    //UC 7B - Show the day along with Daily Wage using Array Map Helper Function
+    let dailyCntr = 0;
+    function mapDayWithWage(dailyWage) {
+      dailyCntr++;
+      return dailyCntr + " = " + dailyWage;
+    }
+    let mapDayWithWageArr = empDailyWageArr.map(mapDayWithWage);
+    console.log(mapDayWithWageArr);
  }
