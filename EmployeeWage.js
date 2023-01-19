@@ -160,4 +160,12 @@ console.log(
     }
     let mapDayWithWageArr = empDailyWageArr.map(mapDayWithWage);
     console.log(mapDayWithWageArr);
+
+     //UC 7C - Show Days when Full Time Wage of 160 were earned
+     function fulltimeWage(dailyWage) {
+      return dailyWage.includes("160");
+    }
+    let fullDayWageArr = mapDayWithWageArr.filter(fulltimeWage);
+    console.log("UC7C - Daily Wage Filter When FullTime Wage is Earned");
+    console.log(fullDayWageArr);
  }
