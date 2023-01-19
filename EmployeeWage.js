@@ -339,3 +339,26 @@ console.log(
 );
 
 
+//uc11
+let totalWages = empDailyHrsAndWageArr
+      .filter((dailyHrsAndWage) => dailyHrsAndWage.dailyWage > 0)
+      .reduce(
+        (totalWage, dailyHrsAndWage) => (totalWage += dailyHrsAndWage.dailyWage),
+        0
+      );
+let totalHours = empDailyHrsAndWageArr
+      .filter((dailyHrsAndWage) => dailyHrsAndWage.dailyWage > 0)
+      .reduce(
+        (totalHours, dailyHrsAndWage) =>
+          (totalHours += dailyHrsAndWage.dailyHours),
+        0
+      );
+console.log(
+      "\nUC 11A - Total Hours: " + totalHours + " Total Wages: " + totalWages
+);
+
+console.log('\UC11B Full working days',empDailyHrsAndWageArr.filter(object=>object.dailyHours>4).map(object=>object.dayNum).toString());
+console.log('\UC11C Parttime working days',empDailyHrsAndWageArr.filter(object=>object.dailyHours==4).map(object=>object.dayNum).toString());
+console.log('\UC11D No working days',empDailyHrsAndWageArr.filter(object=>object.dailyHours<4).map(object=>object.dayNum).toString());
+
+
